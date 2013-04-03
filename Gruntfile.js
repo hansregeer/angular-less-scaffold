@@ -29,6 +29,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
+      less: {
+            files: ['less/{,*/}*.less'],
+            tasks: ['less:dist']
+        },
       livereload: {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
@@ -104,6 +108,16 @@ module.exports = function (grunt) {
           dest: 'test/spec'
         }]
       }
+    },
+    less : {
+        dist : {
+            options: {
+                yuicompress: true
+            },
+            files: {
+                "app/assets/css/ds-theme-ocean.css": "less/ds-theme-ocean.less"
+            }
+       }
     },
     concat: {
       dist: {
@@ -218,6 +232,7 @@ module.exports = function (grunt) {
   grunt.registerTask('server', [
     'clean:server',
     'coffee:dist',
+    'less:dist',
     'livereload-start',
     'connect:livereload',
     'open',
@@ -236,6 +251,7 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'coffee',
+    'less',
     'useminPrepare',
     'imagemin',
     'cssmin',
