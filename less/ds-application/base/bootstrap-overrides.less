@@ -1,0 +1,105 @@
+//
+// Additions & extentions to the default Bootstrap classes
+// -------------------------------------------------------
+
+.navbar {
+  font-size: 13px;
+}
+
+.navbar-static-top {
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  border-bottom: 1px solid @navbarBorderColor;
+}
+
+.navbar-inverse .brand {
+  color: @navbarInverseBrandColor; //use of wrong variable in bootstrap
+  text-shadow: 0 -1px 0 @navbarBrandShadowColor;
+  font-size: 16px;
+  padding-top: 3px;
+  margin-top: 0;
+}
+
+.navbar-inverse .brand:hover {
+  color: lighten(@navbarInverseBrandColor, 20);
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.dropdown-menu li > a {
+  font-weight: 500;
+}
+
+code {
+  color: #555;
+}
+
+//
+// Updating default or hard-coded RGB variables
+// so it can be used inside a themed application
+// ---------------------------------------------
+.label-themed, .badge-themed {
+  background: @badge-background;
+}
+
+//Extra selector for selected row in table (themed)
+.table tbody tr {
+  &.selected-themed td {
+    background-color: @table-selected-themed-background;
+  }
+}
+
+//Extra selector for selected row in table (themed) {HOVER class}
+.table-hover tbody tr {
+  &.selected-themed:hover td {
+    background-color: darken(@table-selected-themed-background, 5%);
+  }
+}
+
+.progress-themed .bar, .progress .bar-themed {
+  #gradient > .vertical(@progress-bar-background, @progress-bar-background-highlight);
+}
+
+.progress-themed.progress-striped .bar, .progress-striped .bar-themed {
+  #gradient > .striped(@progress-bar-background);
+}
+
+// Update default (MAC like) border focus
+// with themed variable
+textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: fade(@input-focus-border, 80%);
+  @shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px fade(@input-focus-border, 60%);
+  .box-shadow(@shadow);
+  outline: 0;
+  outline: thin dotted    \9; /* IE6-9 */
+}
+
+//
+// Overrides to the responsive settings
+// -----------------------------------------
+@media (max-width: @navbarCollapseWidth) {
+//.navbar .nav-collapse .nav .pull-right {float: none;margin-left: 0;}
+//.navbar-inner {height:60px;}
+  .navbar-inner {
+    padding: 5px;
+  }
+
+  .navbar .btn-navbar {
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,30 @@
+a {
+  font-weight: 500;
+}
+
+.textColor { //force default textcolor for icons in simple ancors
+// example: <a href="#">linkje met icon <i class="glyphicon-skull inheritColor"></i></a>
+  color: @textColor;
+  text-decoration: none;
+}
+
+.textColor:hover {
+  color: darken(@textColor, 20%);
+}
+
+a:hover i, a:hover .textColor, .textColor:hover {
+  text-decoration: none;
+}
+
+address p {
+	margin-bottom: 0;
+}
+
+.carousel-caption address {
+	margin-bottom: 0;
+}
+
+input[type="file"] {
+	line-height: 1em;
+	vertical-align: baseline;
+}

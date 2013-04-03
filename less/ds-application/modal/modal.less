@@ -1,0 +1,35 @@
+.modal {
+  .border-radius(6px);
+}
+
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  .opacity(70);
+}
+
+.modal-header {
+  color: @modal-header-color;
+  #gradient > .vertical (@modal-header-background,@modal-header-background-highlight);
+  border-bottom: 1px solid @modal-header-border-bottom;
+  border-top: 1px solid @modal-header-border-highlight;
+
+  .border-top-left-radius(6px);
+  .border-top-right-radius(6px);
+
+  .close {
+    padding:2px 3px;
+    color: @modal-header-color;
+    font-size:12px;
+    text-shadow: 1px 0 darken(@modal-header-background,40%);
+    .opacity(80);
+  }
+}
+
+.model-header h1, .model-header h2, .model-header h3 {
+  font-size: 18px;
+  color: @modal-header-color;
+}
+
+.modal h1, .modal h2, .modal h3 {
+  font-size: 16px;
+}

@@ -1,0 +1,21 @@
+.navbar .nav > li > a {font-weight:bold;}
+
+.btn-transparent {
+    font-size:@fontSizeSmall !important;
+    font-weight:bold;
+    background:none;
+    .box-shadow(none);
+    border:none;
+    .opacity(70);
+}
+
+.btn-transparent:hover, .btn-transparent:active, .btn-transparent:focus {
+    #translucent > .background(#000000, 0.1);
+    .opacity(100);
+}
+
+.btn-transparent .dropdown-toggle {
+     #translucent > .background(#000000, 0.2);  
+}
+
+.navbar .btn, .navbar .btn-group{margin-top:3px !important;}

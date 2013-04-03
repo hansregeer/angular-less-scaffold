@@ -1,0 +1,302 @@
+// UP TO LANDSCAPE PHONE
+// ---------------------
+@media (max-width: 480px) {
+
+}
+
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+@media (max-width: 767px) {
+  #footer {
+    margin-left: (0 - @responsivePadding);
+    margin-right: (0 - @responsivePadding);
+    padding-left: @responsivePadding;
+    padding-right: @responsivePadding;
+  }
+
+  .subnav, .filter-pane {
+    margin-left: (0 - @responsivePadding);
+    margin-right: (0 - @responsivePadding);
+  }
+
+//hide report group title for smaller screens
+  .subnav .brand small {
+    display: inline !important;
+  }
+}
+
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .subnav .container { #grid > .core(@gridColumnWidth768, @gridGutterWidth768)}
+
+  .subnav .brand small {
+    display: inline !important;
+  }
+}
+
+//
+// Responsive: Normal sized desktops
+// --------------------------------------------------
+.subnav .brand small {
+  display: none;
+}
+
+//
+// Responsive: Large desktop and up
+// --------------------------------------------------
+@media (min-width: 1200px) {
+  .subnav .brand small {
+    display: inline !important;
+  }
+}
+
+//
+// navbar colapse width
+// --------------------------------------------------
+@media (max-width: @navbarCollapseWidth) {
+  .navbar .nav-collapse .pull-right {
+    float: none;
+    margin-left: 0;
+  }
+
+  .subnav .btn-navbar, .navbar a, .navbar .btn-group .open > .dropdown-menu {
+    display: block;
+  }
+
+  .subnav .container, .filter-pane .container {
+    width: auto;
+    padding: 0;
+  }
+
+  .filter-pane .container {
+    padding-left: @responsivePadding;
+    padding-right: @responsivePadding;
+  }
+
+  .subnav .nav-collapse .pull-right {
+    float: none;
+    margin-left: 0;
+  }
+
+  .navbar .btn-group .dropdown-menu a:hover {
+    background-color: @navbarInverseBackground;
+  }
+
+  .navbar .btn-group  .dropdown-menu, .subnav .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    float: none;
+    display: none;
+    max-width: none;
+    margin: 0 15px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    .border-radius(0);
+    .box-shadow(none);
+  }
+
+  .navbar .btn-navbar {
+    min-width: 50px;
+    float: none;
+    font-size: @fontSizeSmall;
+    font-weight: 500;
+    .opacity(80);
+  }
+
+  .subnav .btn-navbar {
+    margin-top: 16px;
+    float: right;
+    font-size: @fontSizeSmall;
+    font-weight: 500;
+    .opacity(80);
+    color: @black;
+  }
+
+}
+
+//
+// responsive heights
+// --------------------------------------------------
+
+// old screens (1024x768 / 1366x768 / and smaller)
+@media (max-height: 700px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbar-pulldown {
+    display: block;
+  }
+
+  .chart-container h2 {
+    margin: 3px 0 2px 0;
+  }
+
+  .chart-small {
+    height: 190px;
+  }
+
+  .chart-medium {
+    height: 274px;
+  }
+
+  .chart-large {
+    height: 400px;
+  }
+
+  .chart-full {
+    height: 490px;
+  }
+
+  .chart-half {
+    height: 229px;
+  }
+
+  .filter-pane {
+    margin-bottom: 5px;
+    padding: 4px 0 2px 0;
+  }
+
+  .subnav, .subnav-inner {
+    min-height: @subnavMinHeight - 10;
+  }
+
+  #report-navigator {
+    margin-top: @margin-top-report-navigator - 10;
+  }
+
+  .subnav .brand {
+    padding: 7px 0 0; // 12 - 10/2
+  }
+}
+
+// Corporate small Screens (1440x900 / 1600x900 / 1680x1050 (depending on toolbars))
+// --------------------------------------------------
+@media (min-height: 701px) and (max-height: 890px) {
+  .chart-small {
+    height: 225px;
+  }
+
+  .chart-medium {
+    height: 372px;
+  }
+
+  .chart-large {
+    height: 420px;
+  }
+
+  .chart-full {
+    height: 630px;
+  }
+
+  .chart-half {
+    height: 319px;
+  }
+
+  .filter-pane {
+    padding: 6px 0 3px 0;
+  }
+
+  .subnav, .subnav-inner {
+    min-height: @subnavMinHeight - 6;
+  }
+
+  #report-navigator {
+    margin-top: @margin-top-report-navigator - 6;
+  }
+
+  .subnav .brand {
+    padding: 9px 0 0; // 12 - 8/2
+  }
+}
+
+// Large screens (1920x1200 and larger)
+// --------------------------------------------------
+@media (min-height: 1100px) {
+  .chart-small {
+    height: 284px;
+  }
+
+  .chart-medium {
+    height: 483px;
+  }
+
+  .chart-large {
+    height: 530px;
+  }
+
+  .chart-full {
+    height: 799px;
+  }
+
+  .chart-half {
+    height: 383px;
+  }
+
+  .filter-pane {
+    margin-bottom: 10px;
+  }
+
+  .subnav, .subnav-inner {
+    min-height: @subnavMinHeight + 8;
+  }
+
+  #report-navigator {
+    margin-top: @margin-top-report-navigator + 8;
+  }
+
+  .subnav .brand {
+    padding: 16px 0 0; // 12 + 8/2
+  }
+}
+
+// Reset for phone (vertical-scrolling is permitted on phone)
+// --------------------------------------------------
+@media (max-width: @navbarCollapseWidth) {
+  .navbar {
+    display: block;
+  }
+
+  .chart-small {
+    height: 239px;
+  }
+
+  .chart-medium {
+    height: 400px;
+  }
+
+  .chart-large {
+    height: 500px;
+  }
+
+  .chart-full {
+    height: 680px;
+  }
+
+  .chart-half {
+    height: 319px;
+  }
+
+  .filter-pane {
+    margin-bottom: 15px;
+    padding: 8px 0 5px 0;
+  }
+
+  .subnav, .subnav-inner {
+    min-height: @subnavMinHeight;
+  }
+
+  #report-navigator {
+    margin-top: @margin-top-report-navigator;
+  }
+
+  .subnav .brand {
+    padding: 14px 0 0;
+  }
+}

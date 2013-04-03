@@ -1,0 +1,58 @@
+// =====================================================================================
+// Theme File - Ocean
+//
+// How to use: 
+//    - The first part is used to override certain Bootstrap variables created inside {bootstrap folder}/variables.less
+//    - The second part of that of specific Fabuland elements / theme colors
+// =====================================================================================
+
+//
+// Override Bootstrap Variables
+// --------------------------------------------------
+@linkColor: #8AAC4C;
+@btnPrimaryBackground: #a2be5c;
+@btnPrimaryBackgroundHighlight: #7c9834;
+@dropdownLinkColorActive: @dropdownLinkColor;
+@navbarHeight: 35px;
+@navbarBrandColor: #1183c0;
+@navbarInverseBackground: #1b263a;
+@navbarInverseBackgroundHighlight: #121e30;
+@navbarInverseBorder: #000;
+@navbarInverseText: #babcc2;
+@navbarInverseLinkColor: #babcc2;
+@navbarInverseLinkColorHover: #a3a6ae;
+@navbarInverseLinkColorActive: @white;
+@navbarInverseLinkBackgroundActive: #1d354d;
+@navbarInverseBrandColor: #24334c;
+
+//
+// Fabuland Specifics
+// --------------------------------------------------
+@navbarBrandShadowColor: #004d77;
+@navbarBorderColor: #34486c;
+
+@baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@subnavBackground: #1D354D;
+@subnavBackgroundHighlight: lighten(@subnavBackground, 5%);
+@subnavBorder: #33476b;
+
+@reportNavBackground: #243045;
+@reportNavBackgroundHighlight: #1a2539;
+@reportNavBorderColor: darken(@subnavBorder, 20);
+@reportNavBoxShadow: lighten(@subnavBorder, 10);
+@reportNavBackgroundHover: darken(@reportNavBackground, 3);
+@reportNavBackgroundHighlightHover: darken(@reportNavBackgroundHighlight, 3);
+
+@reportNavActiveColor: #131f31;
+
+@table-selected-themed-background: #e6f5c1;
+
+@progress-bar-background: #92b048;
+@progress-bar-background-highlight: #86af48;
+
+@footer-background-color: @subnavBackgroundHighlight;
+@footer-border-color: @navbarBorderColor;
+@footer-color: #fff;
+@footer-link-color: #abc6df;
+@footer-link-color-active: lighten(@footer-link-color, 6%);

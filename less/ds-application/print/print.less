@@ -1,0 +1,121 @@
+@media print {
+  .container {
+    width: 100%;
+  }
+
+//reset a-href content rule (not usefull in websystems)
+  a[href]:after {
+    content: "";
+  }
+
+  .chartArea {
+    position: absolute;
+    top: 300px;
+  }
+
+  .chartPanel {
+    margin-top: 25px;
+  }
+
+  .filter {
+    position: absolute;
+    width: 100% !important;
+    top: 70px;
+    border: 1px solid silver;
+    padding: 15px !important;
+    margin: 0 0 20px !important;
+    left: 0;
+    right: 0;
+  }
+
+  .filter::before {
+    content: 'Actieve filters';
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .filter .control-group {
+    margin: 10px 0 5px;
+  }
+
+  .metaDataFilterPanel .control-label, .metaDataFilterPanel .controls, .metaDataFilterPanel .control-label>div {
+    display: inline-block;
+    width: 150px;
+  }
+
+  .chartButtons, .metaDataFilterPanel .btn, .content-nav, .eventSelectLink, .createCorrectionButton {
+    display: none;
+  }
+
+  .metaDataFilterPanel input[type="text"], select {
+    width: 150px;
+    border: 1px solid white;
+    background: white;
+  }
+
+  .navbar {
+    display: none !important;
+  }
+
+  .breadcrumb {
+    box-shadow: none;
+    background: none;
+    border: none !important;
+    font-weight: bold;
+    margin: 20px 0 0;
+  }
+
+  .breadcrumbContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb > li:last-child {
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  .chart {
+    width: 520px;
+    min-height: 330px;
+    margin: 25px 0;
+  }
+
+  .chart>div>div {
+    height: auto !important;
+    width: auto !important;
+  }
+
+  footer {
+    position: absolute;
+    background: white;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+
+  .removeSelection, .removeStorage, .removeStorage[style] {
+    display: none !important;
+  }
+
+  body>div:not(:first-child) {
+  /* Wicket debug */
+    display: none;
+  }
+
+  select, select[style] {
+    display: none !important;
+  }
+
+  .tableChart div div:nth-child(2) {
+    display: none !important;
+  }
+
+  #wicketAjaxDebugWindow[style], #wicketDebugLink[style] {
+    display: none !important;
+  }
+
+  body > div {
+    width: 100%;
+  }
+}

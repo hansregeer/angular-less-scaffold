@@ -1,0 +1,44 @@
+.filter-pane {
+  margin-bottom: 4px;
+  padding: 10px 0 7px 0;
+  color: #333;
+  border-bottom: 1px solid @tabHeaderBorderColor;
+  #gradient > .vertical(@tabHeaderBackground, @tabHeaderBackgroundHighLight);
+  .box-shadow(0 1px 4px rgba(0,0,0,.065));
+}
+
+//H3 is used for printing and semantic purposes
+.filter-pane h3 {
+  font-weight: normal;
+  font-size: @baseFontSize;
+  line-height: 28px;
+  vertical-align: baseline;
+  display: inline;
+}
+
+.filter-selected-label {
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, .9);
+  display: inline-block;
+  .ie7-inline-block();
+  font-size: @fontSizeSmall;
+  line-height: @baseLineHeight;
+  padding: 2px 8px 2px 8px;
+  margin-right: 3px;
+  margin-left: 3px;;
+  .border-radius(3px);
+  border: 1px solid @filter-btn-border;
+  #translucent > .background(@tabHeaderBackgroundHighLight, 45%);
+}
+
+.filter-select, .filter-select-clearable {
+  min-width: 200px;
+}
+
+.filter-select.filter-small, .filter-select-clearable.filter-small {
+  min-width: 120px;
+}
+
+.filter-select.filter-wide, .filter-select-clearable.filter-wide {
+  min-width: 250px;
+}

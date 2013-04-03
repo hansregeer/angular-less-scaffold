@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto (0- @footer-height - 1);
+}
+
+#push, #footer {
+  height: @footer-height;
+}
+
+#footer {
+  background-color: @footer-background-color;
+  border-top: 1px solid @footer-border-color;
+  color: @footer-color;
+}
+
+#footer a {
+  color: @footer-link-color;
+}
+
+#footer a:hover, #footer a:active {
+  color: @footer-link-color-active;
+}
+
+#footer .container .credit {
+  margin: (@footer-height/4)+2 0 0 0;
+}
+
+.chromeframe {
+  background: @chrome-frame-background-color;
+  color: #fff;
+  padding: 5px 3px;
+  font-weight: 600;
+  margin: 0 0 0 0;
+}
+
+.chromeframe  a {
+  color: lighten(@chrome-frame-background-color, 34%);
+  font-weight: 600;
+}
+
+.chromeframe  a:hover {
+  color: lighten(@chrome-frame-background-color, 50%);
+}
+

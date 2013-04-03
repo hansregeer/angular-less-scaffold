@@ -1,0 +1,54 @@
+//
+// Chart container & base Look-and-Feel
+// --------------------------------------------------
+.chart-container {
+  margin-bottom: 10px;
+}
+
+.chart-container h2 {
+  border-bottom: @chart-header-border;
+  color: @chart-header-color;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 7px 0 5px 0;
+}
+
+.chart-container h2 i {
+  font-size: 16px;
+  color: lighten(@chart-header-color, 15%);
+  margin-right: 6px;
+  vertical-align: middle;
+  line-height: 19px;
+  font-weight: normal;
+}
+
+.chart-container h2 small {
+  color: @textColor;
+  font-size: @fontSizeSmall;
+  line-height: @baseLineHeight;
+}
+
+.chart-container h2 small a {
+  color: greyscale(@linkColor);
+}
+
+.chart-container h2 small a:hover,
+.chart-container h2 small a:focus {
+  text-decoration: none;
+  color: darken(greyscale(@linkColor), 20%);
+}
+
+.chart-container h2 small i {
+  margin-right: 0;
+  font-size: @fontSizeSmall - 1;
+  line-height: @baseLineHeight - 1;
+  color: inherit;
+}
+
+.chart {
+  .border-radius(5px);
+}
+
+.chart-center {
+ //TODO without absolute position
+}

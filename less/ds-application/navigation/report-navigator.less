@@ -1,0 +1,125 @@
+//
+// Report Navigator
+// --------------------------------------------------
+#report-navigator {
+  margin-top: @margin-top-report-navigator;
+}
+
+#report-navigator > li > a,
+#report-navigator .nav-group > a {
+  padding: 0.6em 0.7em 0.3em 0.7em;
+  font-size: 0.9em;
+  color: @reportNavDefaultColor;
+  background-clip: padding-box;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  margin-left: 4px;
+}
+
+#report-navigator > li > a,
+#report-navigator > li > a:hover,
+#report-navigator > li.open > a,
+#report-navigator > li .nav-group > a,
+#report-navigator > li .nav-group > a:hover,
+#report-navigator > li .nav-group.open > a {
+  background-color: @reportNavBackground;
+  #gradient > .vertical(@reportNavBackground, @reportNavBackgroundHighlight);
+  .box-shadow(inset 0 1px 0 @reportNavBoxShadow);
+  border: 1px solid @reportNavBorderColor;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#report-navigator > li > a i,
+#report-navigator > li .nav-group > a i {
+  vertical-align: middle;
+}
+
+#report-navigator > li > a:hover,
+#report-navigator > li.open > a,
+#report-navigator > li .nav-group > a:hover,
+#report-navigator > li .nav-group.open > a {
+  #gradient > .vertical(@reportNavBackgroundHover, @reportNavBackgroundHighlightHover);
+}
+
+#report-navigator > li.active > a,
+#report-navigator > li.active .nav-group > a {
+  color: @reportNavActiveColor;
+  #gradient > .vertical(@reportNavActiveBackgroundHighLight, @reportNavActiveBackground);
+  .box-shadow(none);
+  border: 1px solid darken(@reportNavActiveBackground, 30%);
+  border-bottom-color: @reportNavActiveBackground;
+  text-shadow: none;
+}
+
+#report-navigator .caret {
+  margin-top: 0.6em;
+  margin-left: .25em;
+  border-top-color: @reportNavDefaultColor;
+  border-bottom-color: @reportNavDefaultColor;
+  .opacity(75);
+}
+
+#report-navigator .active  .caret {
+  border-top-color: @reportNavActiveColor;
+  border-bottom-color: @reportNavDefaultColor;
+}
+
+//
+// Split navigators
+// ------------------------
+
+// Float them, remove border radius, then re-add to first and last elements
+.nav-group > a {
+  .border-radius(0);
+  display: inline-block;
+  border-right: 1px solid darken(@reportNavBackground, 10%) !important;
+  zoom: 1;
+  *display: inline; //IE7
+}
+
+.nav-group > a + a {
+  display: inline-block;
+  margin-left: -4px !important;
+  margin-right: 2px;
+  border-left: 1px solid lighten(@reportNavBackground, 3%) !important;
+  border-right: none;
+  padding-left: 0.3em !important;
+  padding-right: 0.4em !important;
+}
+
+#report-navigator > li.active .nav-group > a {
+  border-right: 1px solid darken(@reportNavActiveBackground, 20%) !important;
+  padding: 0.6em 0.5em 0.4em 0.3em !important;
+}
+
+#report-navigator > li.active .nav-group > a + a {
+  border-left: 1px solid lighten(@reportNavActiveBackground, 3%) !important;
+  border-right: none;
+}
+
+#report-navigator > li .nav-group.open > a + a {
+  .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+}
+
+#report-navigator > li.active .nav-group > a + a:hover {
+  #gradient > .vertical(darken(@reportNavActiveBackground, 5%) , darken(@reportNavActiveBackgroundHighLight, 5%) );
+  border-left: 1px solid lighten(@reportNavActiveBackground, 1%) !important;
+}
+
+.nav-group > a,
+.nav-group > .dropdown-menu,
+.nav-group > .popover {
+  font-size: @baseFontSize; // redeclare as part 2 of font-size inline-block hack
+}
+
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.nav-group  > a:first-child {
+  margin-left: 0;
+  .border-top-left-radius(@baseBorderRadius);
+}
+
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.nav-group  > a:last-child,
+.nav-group  > .dropdown-toggle {
+  .border-top-right-radius(@baseBorderRadius);
+}
