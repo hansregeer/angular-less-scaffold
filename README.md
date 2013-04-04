@@ -7,6 +7,11 @@ Personal Angular test project created with Yeoman and extended with LESS support
 
 Install Node.js and AngularJS (and its dependencies).
 
+	npm install bower - g 			#install bower globally
+	npm install && bower install	#resolve dependencies
+
+TEMP (hoe het project gecreerd is:
+
     npm install generator-angular generator-testacular  # install generators
     yo angular                     # scaffold out a AngularJS project
     npm install && bower install   # install default dependencies
