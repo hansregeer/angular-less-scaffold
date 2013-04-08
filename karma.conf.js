@@ -7,17 +7,16 @@ basePath = '';
 files = [
     JASMINE,
     JASMINE_ADAPTER,
-    'app/components/angular/angular.js',
-    'app/components/angular-mocks/angular-mocks.js',
-    'app/scripts/*.js',
-    'app/scripts/**/*.js',
+    'app/repos/angular/angular.js',
+    'app/repos/angular-mocks/angular-mocks.js',
+    'app/nl/**/*.js',
     'test/mock/**/*.js',
     'test/spec/**/*.js'
 ];
 
 // Avoid including minified version of angular and other libs
 exclude = [
-    'app/components/*/*.min.js'
+    'app/repos/*/*.min.js'
 ];
 
 // test results reporter to use

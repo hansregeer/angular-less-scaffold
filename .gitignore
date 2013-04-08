@@ -37,7 +37,7 @@ nbproject
 node_modules
 dist
 atlassian-ide-plugin.xml
-app/components
+app/repos
 
 # Java specific
 *target

@@ -29,8 +29,9 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/nl/**/*.html',
                     '{.tmp,<%= yeoman.app %>}/assets/css/{,*/}*.css',
-                    '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+                    '{.tmp,<%= yeoman.app %>}/nl/**/*.js',
                     '<%= yeoman.app %>/assets/img/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ],
                 tasks: ['livereload']
@@ -78,12 +79,16 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= yeoman.app %>/scripts/{,*/}*.js'
+                '<%= yeoman.app %>/nl/{,*/}*.js'
             ]
         },
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
+                singleRun: true
+            },
+            e2e: {
+                configFile: 'karma-e2e.conf.js',
                 singleRun: true
             }
         },
@@ -97,25 +102,15 @@ module.exports = function (grunt) {
                 }
             }
         },
-        concat: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/scripts/scripts.js': [
-                        '.tmp/scripts/{,*/}*.js',
-                        '<%= yeoman.app %>/scripts/{,*/}*.js'
-                    ]
-                }
-            }
-        },
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= yeoman.dist %>/index.html'
             }
         },
         usemin: {
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            css: ['<%= yeoman.dist %>/assets/css/{,*/}*.css'],
             options: {
                 dirs: ['<%= yeoman.dist %>']
             }
@@ -130,16 +125,6 @@ module.exports = function (grunt) {
                         dest: '<%= yeoman.dist %>/images'
                     }
                 ]
-            }
-        },
-        cssmin: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/styles/main.css': [
-                        '.tmp/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/styles/{,*/}*.css'
-                    ]
-                }
             }
         },
         htmlmin: {
@@ -159,7 +144,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '<%= yeoman.app %>',
-                        src: ['*.html', 'views/*.html'],
+                        src: ['*.html', 'nl/**/*.html'],
                         dest: '<%= yeoman.dist %>'
                     }
                 ]
@@ -175,20 +160,11 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= yeoman.dist %>/scripts',
+                        cwd: '<%= yeoman.dist %>/nl',
                         src: '*.js',
-                        dest: '<%= yeoman.dist %>/scripts'
+                        dest: '<%= yeoman.dist %>/nl'
                     }
                 ]
-            }
-        },
-        uglify: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/scripts/scripts.js': [
-                        '<%= yeoman.dist %>/scripts/scripts.js'
-                    ]
-                }
             }
         },
         copy: {
@@ -202,8 +178,8 @@ module.exports = function (grunt) {
                         src: [
                             '*.{ico,txt}',
                             '.htaccess',
-                            'components/**/*',
-                            'images/{,*/}*.{gif,webp}'
+                            'repos/**/*',
+                            'assets/**/*',
                         ]
                     }
                 ]
@@ -212,8 +188,6 @@ module.exports = function (grunt) {
     });
 
     grunt.renameTask('regarde', 'watch');
-    // remove when mincss task is renamed
-    grunt.renameTask('mincss', 'cssmin');
 
     grunt.registerTask('server', [
         'clean:server',
@@ -235,17 +209,15 @@ module.exports = function (grunt) {
         'jshint',
         'test',
         'less',
-        'useminPrepare',
         'imagemin',
-        'cssmin',
         'htmlmin',
-        'concat',
         'copy',
         'cdnify',
         'usemin',
-        'ngmin',
-        'uglify'
+        'ngmin'
     ]);
 
     grunt.registerTask('default', ['build']);
 };
+
+//TODO: build target does not work yet, but build process is probably not the responsibility of this project.

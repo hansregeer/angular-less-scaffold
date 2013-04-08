@@ -4,7 +4,7 @@ angular.module('helloAngularApp', [])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/main.html',
+                templateUrl: 'nl/ditp/fabuland/ui/view/main.html',
                 controller: 'MainCtrl'
             })
             .otherwise({

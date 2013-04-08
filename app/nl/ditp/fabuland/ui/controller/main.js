@@ -5,7 +5,6 @@ angular.module('helloAngularApp')
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
-            'Karma',
-            'fabuland'
+            'Karma'
         ];
     });
