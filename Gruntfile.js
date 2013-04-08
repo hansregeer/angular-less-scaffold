@@ -22,24 +22,16 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
             less: {
-                files: ['less/{,*/}*.less'],
-                tasks: ['less:dist']
+                files: ['less/**/*.less'],
+                tasks: ['less:dist', 'livereload']
             },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
-                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+                    '{.tmp,<%= yeoman.app %>}/assets/css/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+                    '<%= yeoman.app %>/assets/img/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ],
                 tasks: ['livereload']
             }
@@ -95,30 +87,13 @@ module.exports = function (grunt) {
                 singleRun: true
             }
         },
-        coffee: {
-            dist: {
-                files: {
-                    '.tmp/scripts/coffee.js': '<%= yeoman.app %>/scripts/*.coffee'
-                }
-            },
-            test: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '.tmp/spec',
-                        src: '*.coffee',
-                        dest: 'test/spec'
-                    }
-                ]
-            }
-        },
         less: {
             dist: {
                 options: {
                     yuicompress: true
                 },
                 files: {
-                    'app/assets/css/ds-theme-ocean.css' : 'less/ds-theme-ocean.less'
+                    'app/assets/css/ds-theme-ocean.css': 'less/ds-theme-ocean.less'
                 }
             }
         },
@@ -242,7 +217,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('server', [
         'clean:server',
-        'coffee:dist',
         'less:dist',
         'livereload-start',
         'connect:livereload',
@@ -252,7 +226,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        'coffee',
         'connect:test',
         'karma'
     ]);
@@ -261,7 +234,6 @@ module.exports = function (grunt) {
         'clean:dist',
         'jshint',
         'test',
-        'coffee',
         'less',
         'useminPrepare',
         'imagemin',

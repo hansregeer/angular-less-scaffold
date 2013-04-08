@@ -5,22 +5,24 @@ basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'app/components/angular/angular.js',
-  'app/components/angular-mocks/angular-mocks.js',
-  'app/scripts/*.js',
-  'app/scripts/**/*.js',
-  'test/mock/**/*.js',
-  'test/spec/**/*.js'
+    JASMINE,
+    JASMINE_ADAPTER,
+    'app/components/angular/angular.js',
+    'app/components/angular-mocks/angular-mocks.js',
+    'app/scripts/*.js',
+    'app/scripts/**/*.js',
+    'test/mock/**/*.js',
+    'test/spec/**/*.js'
 ];
 
-// list of files to exclude
-exclude = [];
+// Avoid including minified version of angular and other libs
+exclude = [
+    'app/components/*/*.min.js'
+];
 
 // test results reporter to use
 // possible values: dots || progress || growl
-reporters = ['progress'];
+reporters = ['dots'];
 
 // web server port
 port = 8080;

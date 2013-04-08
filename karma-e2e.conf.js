@@ -5,17 +5,19 @@ basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
-  ANGULAR_SCENARIO,
-  ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/**/*.js'
+    ANGULAR_SCENARIO,
+    ANGULAR_SCENARIO_ADAPTER,
+    'test/e2e/**/*.js'
 ];
 
-// list of files to exclude
-exclude = [];
+// Avoid including minified version of angular and other libs again
+exclude = [
+    'test/e2e/**/*.min.js'
+];
 
 // test results reporter to use
 // possible values: dots || progress || growl
-reporters = ['progress'];
+reporters = ['dots'];
 
 // web server port
 port = 8080;

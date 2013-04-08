@@ -1,0 +1,30 @@
+# humanstxt.org
+
+# www.ditp.nl/software-ontwikkeling
+
+/* TEAM */
+	UI Architecture & Design: Hans Regeer
+	Contact: hans [at] ditpsoftware.nl
+	Twitter: @hansregeer
+	From: Voorhout, Netherlands
+
+	Front-end development: Bart Slingerland
+	Contact: bart [at] ditpsoftware.nl
+
+	Server Architecture & Design: Bram Pouwelse
+	Contact: bram [at] ditpsoftware.nl
+
+	Project Management: Peter Maas
+	Contact: peter [at] ditpsoftware.nl
+
+	Developer: Patrick Palm
+	Developer: Jorden Schrama
+	Developer: Eric Jansen
+
+/* THANKS */
+	You, for using our dashboard.
+
+/* SITE */
+	Doctype:HTML5
+	Components: AngularJS, OSGi, Java, jQuery, HTML5, LESS
+	Software: IntelliJ, Eclipse, Yeoman, NodeJS
