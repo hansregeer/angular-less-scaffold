@@ -29,9 +29,9 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
-                    '<%= yeoman.app %>/nl/**/*.html',
+                    '<%= yeoman.app %>/ng/**/*.html',
                     '{.tmp,<%= yeoman.app %>}/assets/css/{,*/}*.css',
-                    '{.tmp,<%= yeoman.app %>}/nl/**/*.js',
+                    '{.tmp,<%= yeoman.app %>}/ng/**/*.js',
                     '<%= yeoman.app %>/assets/img/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ],
                 tasks: ['livereload']
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= yeoman.app %>/nl/{,*/}*.js'
+                '<%= yeoman.app %>/ng/{,*/}*.js'
             ]
         },
         karma: {
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
-                dest: '<%= yeoman.dist %>/index.html'
+                dest: '<%= yeoman.dist %>'
             }
         },
         usemin: {
@@ -144,7 +144,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '<%= yeoman.app %>',
-                        src: ['*.html', 'nl/**/*.html'],
+                        src: ['*.html', 'ng/**/*.html'],
                         dest: '<%= yeoman.dist %>'
                     }
                 ]
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
                             '*.{ico,txt}',
                             '.htaccess',
                             'repos/**/*',
-                            'assets/**/*',
+                            'assets/**/*'
                         ]
                     }
                 ]
