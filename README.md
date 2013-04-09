@@ -1,6 +1,8 @@
 angular-less-scaffold
 =====================
 
+**Moved to BitBucket**
+
 Personal Angular test project created with Yeoman and extended with LESS support and bootstrap LESS overrides
 
 **Getting Started**
